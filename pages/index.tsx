@@ -13,10 +13,14 @@ type Props = {
 };
 
 export default function Index({ allPosts }: Props) {
+  useEffect(() => {
+    document.getElementById('header').style.color = 'red';
+  }, []);
+  
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (
-    <h1>
+    <h1 id="header">
       Header from NExtJS app
     </h1>
   );
