@@ -51,6 +51,9 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allPosts },
+    props: {
+      allPosts,
+      page: 'header',
+    },
   };
 };
