@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Container from "../components/container";
 import MoreStories from "../components/more-stories";
 import HeroPost from "../components/hero-post";
@@ -14,16 +14,24 @@ type Props = {
 };
 
 export default function Index({ allPosts }: Props) {
+  const [counter, setCounter] = React.useState(0);
+
+  const handleOnClick = () => {
+    setCounter(counter + 1);
+  }
+
   useEffect(() => {
     document.getElementById('header').style.color = 'red';
   }, []);
   
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
   return (
-    <h1 id="header">
-      Header from NExtJS app
-    </h1>
+    <>
+      <h1 id="header">
+        Header from NExtJS app
+      </h1>
+      <span>Counter: ${counter}</span>
+      <button onClick={handleOnClick}>Click Mee..!</button>
+    </>
   );
 }
 
