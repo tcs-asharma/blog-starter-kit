@@ -14,11 +14,11 @@ type Props = {
 };
 
 export default function Index({ allPosts }: Props) {
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
-  const handleOnClick = () => {
-    setCounter(counter + 1);
-  }
+  // const handleOnClick = () => {
+  //   setCounter(counter + 1);
+  // }
 
   useEffect(() => {
     document.getElementById('header').style.color = 'red';
@@ -29,8 +29,8 @@ export default function Index({ allPosts }: Props) {
       <h1 id="header">
         Header from NExtJS app
       </h1>
-      <span>Counter: ${counter}</span>
-      <button onClick={handleOnClick}>Click Mee..!</button>
+{/*       <span>Counter: ${counter}</span>
+      <button onClick={handleOnClick}>Click Mee..!</button> */}
     </>
   );
 }
